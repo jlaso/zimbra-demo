@@ -1,0 +1,32 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Aliases</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>targetid</td>
+            <td>name</td>
+            <td>uid</td>
+            <td>targetname</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for alias in aliases %}
+        <tr>
+            <td><a href="{{ path('_demo_aliases', {'id':alias.id}) }}">{{ alias.id }}</a></td>
+            <td>{{ alias.targetid }}</td>
+            <td>{{ alias.name }}</td>
+            <td>{{ alias.uid }}</td>
+            <td>{{ alias.targetname }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

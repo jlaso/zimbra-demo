@@ -1,0 +1,15 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Accounts list</h1>
+    <ul id="demo-list">
+        <li><a href="{{ path('_demo_accounts') }}">accounts</a></li>
+        <li><a href="{{ path('_demo_aliases') }}">aliases</a></li>
+        <li><a href="{{ path('_demo_domains') }}">domains</a></li>
+        <li><a href="{{ path('_demo_coses') }}">classes of service</a></li>
+    </ul>
+{% endblock %}

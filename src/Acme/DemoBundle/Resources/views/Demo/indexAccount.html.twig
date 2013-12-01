@@ -1,0 +1,25 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Accounts list</h1>
+    <table class="table table-bordered table-stripped">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>account</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for account in accounts %}
+            <tr>
+                <td><a href="{{ path('_demo_account', {'id': account.id}) }}">{{ account.id }}</a></td>
+                <td>{{ account.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

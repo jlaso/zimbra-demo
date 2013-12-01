@@ -1,0 +1,30 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Classes of services</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cos in coses %}
+        <tr>
+            <td>
+                <a href="{{ path('_demo_cos', {'id': cos.id}) }}">
+                    {{ cos.id }}
+                </a>
+            </td>
+            <td>{{ cos.name }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

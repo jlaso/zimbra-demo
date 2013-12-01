@@ -1,0 +1,25 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Domains</h1>
+    <table class="table table-bordered table-stripped">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for domain in domains %}
+            <tr>
+                <td><a href="{{ path('_demo_domain', {'id': domain.id}) }}">{{ domain.id }}</a></td>
+                <td>{{ domain.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
